@@ -1,0 +1,2 @@
+awskeyid = 'AKIAINDUCT3LVNT64MNA'
+awskey = 'E+6FGK8SMcGkG4/mOoQl5Dzaj+Xi37A2lWyLP1DN'

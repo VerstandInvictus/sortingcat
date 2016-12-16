@@ -1,0 +1,1 @@
+aws s3 sync webapp stlvg-site

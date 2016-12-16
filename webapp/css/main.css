@@ -1,0 +1,183 @@
+* {
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: white;
+    margin: 0;
+    padding: 0;
+    min-width: 500px;
+}
+.logoHeader {
+    width: 100%;
+    height: 75px;
+    display: block;
+    background-color: #ed8107;
+    color: black;
+    background-repeat: no-repeat;
+    overflow:hidden;
+}
+.infoHeader {
+    width: 100%;
+    height: 5vh;
+    display: block;
+    background-color: #464746;
+    color: white;
+    background-repeat: no-repeat;
+    overflow:hidden;
+}
+.headertext {
+    float: right;
+    text-align: center;
+    height: 175px;
+    padding: 13px 10px;
+    overflow: hidden;
+}
+.infotext {
+    text-align: center;
+    padding: 13px 10px;
+}
+.instructions {
+    color: #cccccc;
+    text-align: center;
+    font-size: 10px;
+}
+.instructions p {
+    margin: 0 auto;
+    max-width: 500px;
+    padding: 8px 0px;
+}
+.submit {
+    text-align: center;
+    background-color: #8b23db;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    margin: 0px auto 10px auto;
+    font-weight: bold;
+    cursor: pointer;
+    max-width: 350px;
+}
+div.cover {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img.cover {
+    display: table-row;
+    object-fit: contain;
+    width: 100%;
+    height: 95vh;
+}
+.infotext span {
+    margin: auto 30px;
+}
+#category {
+    font-size: 20px;
+}
+#creator {
+    font-size: 20px;
+}
+.wrapper {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+#lowfloat {
+    top: 65%;
+}
+#hifloat {
+    top: 5%
+}
+.cornerbox p {
+    margin: 0;
+    padding 0 5px;
+}
+.cornerbox {
+    opacity: 0.5;
+    float: left;
+    display: block;
+    background-color: #666699;
+    color: #dadada;
+    font-size: 90%;
+    margin: 0 auto 0 5%;
+    padding: 0 5px;
+    border: 2px outset #dadada;
+    border-radius: 3px;
+}
+.cornercount {
+    font-size: 70%;
+}
+#rightcornerhot {
+    float: right;
+    font-size: 300%;
+    margin-left: 95%;
+}
+.floatbox {
+    display: block;
+    background-color: grey;
+    color: white;
+    font-size: 200%;
+    margin: 0 auto;
+}
+#tapbox {
+    top: 0%;
+}
+#actionbox {
+    top: 65%;
+}
+
+#category {
+    color: #e54e00;
+}
+
+#creator {
+    color: #a698c5;
+}
+
+#index {
+    color: #93c247;
+}
+
+#remain {
+    color: #5991ae;
+}
+
+#session {
+    color: #f7b03c;
+}
+
+@media (min-device-width: 750px) {
+    .cornerbox {
+        font-size: 150%;
+    }
+    .floatbox {
+        font-size: 250%;
+    }
+    #rightcornerhot {
+        font-size: 300%;
+    }
+}
+
+@media (max-width: 800px) {
+    .infoHeader {
+        font-size: 60%;
+    }
+    .infotext span {
+        margin: auto 8px;
+    }
+    #category {
+        font-size: 12px;
+    }
+    #creator {
+        font-size: 12px;
+    }
+}
+
+@media (max-device-width: 700px) and (orientation: landscape) {
+    #lowfloat {
+        top: 175px;
+    }
