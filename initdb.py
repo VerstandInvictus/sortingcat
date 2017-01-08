@@ -76,6 +76,9 @@ if __name__ == '__main__':
     filesdb = dbresource.Table('sortingcat-items')
     bucketList = getWorkBuckets()
     for bucket in bucketList:
+        promptval = raw_input('{0} : populate to DB? (y/n) > '.format(bucket))
+        if promptval == 'n':
+            continue
         conf = getConfigFile(bucket)
         flist = getFileList(bucket)
         random.shuffle(flist)

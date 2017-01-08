@@ -150,24 +150,15 @@ img.cover {
     color: #f7b03c;
 }
 
-@media (min-device-width: 750px) {
-    .cornerbox {
-        font-size: 150%;
-    }
-    .floatbox {
-        font-size: 250%;
-    }
-    #rightcornerhot {
-        font-size: 300%;
-    }
-}
-
 @media (max-width: 800px) {
     .infoHeader {
         font-size: 60%;
     }
     .infotext span {
         margin: auto 8px;
+    }
+    .infotext {
+        padding: 9px;
     }
     #category {
         font-size: 12px;
@@ -181,3 +172,26 @@ img.cover {
     #lowfloat {
         top: 175px;
     }
+    .infoHeader {
+        font-size: 60%;
+        height: 6vh;
+    }
+    .infotext span {
+        margin: 0 15px;
+    }
+    .infotext {
+        padding: 5px;
+    }
+    #category {
+        font-size: 12px;
+    }
+    #creator {
+        font-size: 12px;
+    }
+    img.cover {
+        display: table-row;
+        object-fit: contain;
+        width: 100%;
+        height: 94vh;
+    }
+}
