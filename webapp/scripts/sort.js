@@ -170,9 +170,16 @@ function showPopover(tagtext, popcolor) {
     $('#tapbox').fadeTo(250, 0.7).delay(1000).fadeTo(250, 0);
 }
 
+function setStreak(delta) {
+    hotstreak
+
+}
+
 authenticate();
 
 $( document ).ready(function() {
+    hotstreak = 0;
+    ephcount = 0;
     $(".floatbox").fadeTo(0,0);
     upact = 'up';
     downact = 'down'

@@ -1,1 +1,1 @@
-aws s3 sync webapp stlvg-site
+aws s3 sync webapp s3://stlvg-site

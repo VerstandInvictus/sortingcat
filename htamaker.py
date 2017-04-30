@@ -97,8 +97,11 @@ if __name__ == "__main__":
                 os.remove(htname)
             hta = hydrustagarchive.HydrusTagArchive(htname)
             itemlist = getDbScanForBucket(bucket)
+            totalitems = len(itemlist)
             print "{0} files found.".format(len(itemlist))
+            count = 0
             for item in itemlist:
+                print "{0} of {1}".format(count, totalitems)
                 itemHash = item['filename'].split('_')[-1].split('.')[0]
                 itemTags = list()
                 if item['tagged'] == u'input':
@@ -108,12 +111,14 @@ Warning: Found input tag! Bucket not complete!
 {0}
 ==========
                           '''.format(item)
+                    os.remove(htname)
                     exit()
                 itemTags.append(item['tagged'])
                 itemTags.append('sortbucket:{0}'.format(bucket))
                 if 'extratag' in item:
                     itemTags.append(item['extratag'])
                 processTags(hta, itemHash, itemTags)
+                count += 1
             hta.GetNamespaces()
             prompt = raw_input('{0} : delete items from DB? (y/n) > '.format(
                 bucket))

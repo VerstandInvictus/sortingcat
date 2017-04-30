@@ -5,8 +5,12 @@ import boto3
 import simplejson as json
 import time
 import config
+from botocore.session import Session
+from botocore.client import Config
 from botocore.exceptions import ClientError
 import random
+
+botoconf = Config(connect_timeout=50, read_timeout=500)
 
 dbclient = boto3.client(
     'dynamodb',
@@ -25,14 +29,16 @@ s3client = boto3.client(
     's3',
     aws_access_key_id=config.awskeyid,
     aws_secret_access_key=config.awskey,
-    region_name='us-west-2'
+    region_name='us-west-2',
+    config=botoconf
 )
 
 s3resource = boto3.resource(
     's3',
     aws_access_key_id=config.awskeyid,
     aws_secret_access_key=config.awskey,
-    region_name='us-west-2'
+    region_name='us-west-2',
+    config=botoconf
 )
 
 
@@ -82,6 +88,7 @@ if __name__ == '__main__':
         conf = getConfigFile(bucket)
         flist = getFileList(bucket)
         random.shuffle(flist)
+        count = 0
         for fileName in flist:
             try:
                 creator = re.search('__(.+?)__', fileName).group(1)
@@ -100,7 +107,8 @@ if __name__ == '__main__':
                     'filename': fileName
                 }
             )
-            print "{0}: {1}".format(bucket, fileName)
+            print "{2}: {0}: {1}".format(bucket, fileName, count)
+            count += 1
 
         foldersdb.put_item(
             Item={
